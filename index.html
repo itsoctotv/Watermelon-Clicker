@@ -1,100 +1,44 @@
-<!-- made by octo; last edited: 10/17/22; available on github.com/octo404 -->
+<!-- made by octo; last edited: 11/02/22; available on github.com/octo404 -->
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="pics/watermelon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/> 
 
-
-
-<html onselectstart='return false;'>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"/> 
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=2">
-        <link rel="icon" type="image/png" href="https://i.imgur.com/RUmCDyk.png"/>
-        <title>Watermelon!</title>
-        
-        <style type="text/css">
-        html { 
-            background-color:lightseagreen;            
-            
-        }
-       
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>watermelons!</title>
+    <style type="text/css">
         body{
-      background-image: url('https://i.imgur.com/PZPkUcc.png');        
-         }
-        </style>
-        <style type="text/css">
-             body {
-                margin: 10px;
-                font-family: 'Luckiest Guy', cursive;
-                font-size: 50px;
-  
+            background-color:lightseagreen;
+            margin: 10px;
+        }
+        .tilecontainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            flex-flow: wrap;
+        }
+        .tilebox{
+            height: 98vh;
+            width: 100vw;
+            border-radius: 50px;
+            background-image: url('pics/tile.png');
+            box-sizing: content-box;
+        }
 
-                position: sticky;
-                top: -10px;
-                
-                }
-            .topnav{
-                overflow: hidden;
-                background-color: lightseagreen;
-                padding: 2px 2px 0px 2px;
-                }
-            .topnav a {
-                float: left;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 10px 10px 0px 10px;
-                text-decoration: none;
-                font-size: 35px;
-                }
-            .topnav a:hover {
-                background-color: #ddd;
-                color: black;
-		
-                }
-
-        </style>  
-  <body>
-      <div class="topnav">
-      <a class="active" href="http://itsoctotv.com/" style="padding-top: 4px;padding-right: 10px;padding-bottom: 0px;">Watermelon</a>
-      <!--
-      <a target="_blank" href="https://twitter.com/itsoctotv" style="float: right;border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 0px;height: 45px;padding-top: 4px;">
-         <img alt="twitter" src="https://i.imgur.com/ANv8t9a.png">
-      </a>
-      <a target="_blank" href="https://discord.gg/hFTj4GXFNa" style="float: right;border-bottom-style: solid;border-bottom-width: 0px;padding-bottom: 20px;height: 25px;padding-top: 4px;">
-         <img alt="discord" src="https://i.imgur.com/EfB5Fxp.png">
-      </a>-->
-      </div>
-  </body>
-        
-        <h1 style="text-align: center; font-size: 100px;">Watermelon Clicker</h1>
-        </body>
-        <style>
-            @font-face{
-                font-family: 'Luckiest Guy',cursive;
-                color: white;
-                src: "https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap";
-            }
-            h1, h2, input{
-                font-family: 'Luckiest Guy', cursive;
-                color: white;
-            }
-            rotate{
-                transform: rotate(45deg);
-            }
-        
-        
-         #watermelonrain{
+        #watermelonrain{
             
-            background-image: url('https://i.imgur.com/2gp1hyx.png');
-
+            background-image: url('pics/watermelon.png');
+            border-radius: 50px;
             height: 100%;
             left: 0;
-            position: absolute;
+            position:sticky;
             top: 0;
             width: 100%;
-            z-index:-1;
+            z-index:0;
             -webkit-animation: watermelonrain 1000s linear infinite;
             -moz-animation: watermelonrain 1000s linear infinite;
             -ms-animation: watermelonrain 1000s linear infinite;
@@ -120,64 +64,95 @@
         @-ms-keyframes watermelonrain {
           0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
           100% {background-position:  0px 50000px, 10000px 20000px, -10000px 15000px;}          
-        }   
-        
-        
-        </style>
+        }
 
-    </head>
-    
-    <script type="text/javascript">
-            function buttonclick(img) {
-            document.getElementById("watermelon").value++;
-            img = document.getElementById("watermelon_img");       
-            img.style.transform = "scale(0.65)";
-            img.style.transition = "transform 0.25s ease";
-            setTimeout(function() {
-                img.style.transform = "scale(1.00)";
-                img.style.transition = "transform 0.25s ease";
-            }, 100);
+        @keyframes flow {
+            100% {background-position: 0 0;}
+            0% {background-position: 0 100000%;}
+        }
 
-            img2 = document.getElementById("watermelon");
-            img2.style.transform = "scale(1.40)";
-            img2.style.transition = "transform 0.75s ease";
-            setTimeout(function() {
-                img2.style.transform = "scale(1.00)";
-                img2.style.transition = "transform 0.50s ease";
-                
-            }, 100);
+        .maintext{
+            font-family: 'Luckiest Guy';
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-flow: wrap;
+            color: white;
+            font-size:calc(18px + 2vw);
+            text-align: center;
+        }
 
-            }
-    </script>
-    <!--height="400px" width="600px"-->
-    <body>
-        
-        <div style="text-align:center;">
-
-            <img id="watermelon_img" src="https://i.imgur.com/8yBpMZL.png" width="30%" height="10%" onclick="buttonclick()" draggable="false">
-            <input style="text-align: center; " type="number" id="watermelon" value="0" readonly></input>
-
-
-        </div>
-        <style type="text/css">
-            input[type=number]{
-            
+        input[type=number]{
+            font-family: 'Luckiest Guy';
             border-style: hidden;
             outline: none;
             overflow: hidden;
-            font-size: 200%;
+            font-size:calc(18px + 2vw);
             width: 70%;
             height: 70%;
-          -moz-appearance: textfield;
-            background-color: rgba(255, 0, 0, 0.0);;
-     
+            color: white;
+            -moz-appearance: textfield;
+            background-color: transparent;
+            text-align: center;
         }
-        </style>
-         
-  </div>
-        <div id="watermelonrain"> </div>
-    </body>
+        input#watermelon{
+            width: 100%;
+            font-size:calc(50px + 5vw);
+        }
+        img#watermelon_img{
+            position: static;
+            margin: 10px;
+            width: 300px;
+            height: 300px;
+        }
+        .button{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-flow: wrap;
+        }
 
- 
+    </style>
+</head>
+
+    <script type="text/javascript">
+        function buttonclick(img) {
+        document.getElementById("watermelon").value++;
+        img = document.getElementById("watermelon_img");       
+        img.style.transform = "scale(0.65)";
+        img.style.transition = "transform 0.25s ease";
+        setTimeout(function() {
+            img.style.transform = "scale(1.00)";
+            img.style.transition = "transform 0.25s ease";
+        }, 100);
+
+        img2 = document.getElementById("watermelon");
+        img2.style.transform = "scale(1.40)";
+        img2.style.transition = "transform 0.75s ease";
+        setTimeout(function() {
+            img2.style.transform = "scale(1.00)";
+            img2.style.transition = "transform 0.50s ease";
+
+        }, 100);
+
+        
+
+    }
+</script>
+
+<body>
+    <div class="tilecontainer">
+        <div class="tilebox">
+            <div id="watermelonrain">
+                <div class="maintext">
+                    <h1>Watermelon Clicker</h1>
+                    <div class="button">
+                        <img id="watermelon_img" src="pics/watermelon_big.png" onclick="buttonclick()" draggable="false">
+                        <input type="number" id="watermelon" value="0" readonly></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
-
